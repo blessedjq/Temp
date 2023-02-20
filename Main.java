@@ -5,11 +5,14 @@ public class Main
 	Scanner sc=new Scanner(System.in);
 	Vikingcity vk=new Vikingcity();
 	String[] str=sc.nextLine().split(";");
-	List<String[]> list=new ArrayList<>();
-	for(String i:str)list.add(i.split(" - "));
-    for(int i=0;i<str.length;++i){
-         String[] curr=list.get(i);
-        // vk.attack(curr[1].charAt(0),Integer.parseInt(curr[3]));
+	List<String[]> totalAttacks=new ArrayList<>();
+	for(String i:str){
+	    String[] currentAttacks=i.split(" : ");
+	    for(String j:currentAttacks)totalAttacks.add(j.split(" - "));
+	}
+	int length=totalAttacks.size();
+    for(int i=0;i<length;++i){
+        String[] curr=totalAttacks.get(i);
         char dir=curr[1].charAt(0);
         int power=Integer.parseInt(curr[3]);
         if(dir=='N')vk.attackNorth(power);
