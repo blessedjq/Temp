@@ -1,28 +1,28 @@
 class Vikingcity{
-    int north=0,south=0,east=0,west=0,count=0;
+    private int northWall=0,southWall=0,eastWall=0,westWall=0,count=0;
     
     public void attackNorth(int power){
-         if(north<power){
+         if(northWall<power){
                     ++count;
-                    north=power;
+                    northWall=power;
                 }
     }
     public void attackSouth(int power){
-         if(south<power){
+         if(southWall<power){
                     ++count;
-                    south=power;
+                    southWall=power;
                 }
     }
     public void attackEast(int power){
-         if(east<power){
+         if(eastWall<power){
                     ++count;
-                    east=power;
+                    eastWall=power;
                 }
     }
     public void attackWest(int power){
-         if(west<power){
+         if(westWall<power){
                     ++count;
-                    west=power;
+                    westWall=power;
                 }
     }
     public int getNoOfEffectiveAttacks(){
